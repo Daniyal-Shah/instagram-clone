@@ -20,14 +20,14 @@ const Header = () => {
             }}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Image
             style={styles.icon}
             source={{
               uri: "https://img.icons8.com/fluency-systems-regular/60/ffffff/like--v1.png",
             }}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TouchableOpacity>
           <View style={styles.unreadBadge}>

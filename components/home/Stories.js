@@ -14,7 +14,7 @@ const Stories = ({ data }) => {
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {data.map((item, index) => (
-          <Story data={item} />
+          <Story data={item} key={index + "story"} />
         ))}
       </ScrollView>
     </View>
