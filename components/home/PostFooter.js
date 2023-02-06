@@ -70,7 +70,7 @@ const PostFooter = ({ caption, noViews, noComments, isLiked, isSaved }) => {
             caption
           ) : (
             <Text>
-              {caption.slice(0, 47)}
+              {caption.slice(0, 50)}
               <Text
                 style={styles.moreText}
                 onPress={() => {

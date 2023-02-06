@@ -37,11 +37,23 @@ export const fakeStories = [
 
 export const fakePosts = [
   {
+    userDP:
+      "https://static.india.com/wp-content/uploads/2022/03/pjimage-48-1.jpg",
+    userName: "Shahrukh Khan",
+    postImage: "https://wallpapercave.com/dwp1x/wp3989372.jpg",
+    caption: "GOAT 🐐",
+    noViews: 1200000,
+    noComments: 52323,
+    isLiked: true,
+    isSaved: true,
+  },
+  {
     userDP: "https://static.toiimg.com/photo/msid-95975619/95975619.jpg",
     userName: "Ayushman",
-    postImage: "https://picsum.photos/seed/picsum/1280/1280",
+    postImage:
+      "https://pbs.twimg.com/media/FjCbIQRVIAA0mum?format=jpg&name=small",
     caption:
-      "What a delightful experience meeting you Jackson. Such a kind hearted rock star. Loved hearing about your journey, I hope you continue to grow both as the star and human. Thanks for the music and for the love you gave my family and home staff. My love to your entire team - Daryl, Isaac, Tiffany n the entire crew, and kamal. What an inspiring bunch you are !",
+      "#AnActionHero is @ayushmannk’s breezy entry into #Action genre & he proves yet again-He can do any genre with same finesse🔥@JaideepAhlawatis a BOMB in this film which keeps exploding & makes an enjoyable #AyushmannKhurrana vs #JaideepAhlawat💪 Rating 3.5⭐️ #AnActionHeroReview",
     noViews: 435234,
     noComments: 53,
     isLiked: false,
