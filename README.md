@@ -2,7 +2,7 @@
 It is a Instagram clone using react native
 
 ## Main Screen
-![MainScreen](https://user-images.githubusercontent.com/51289334/216968858-8c7473c7-7827-4658-8c70-ec3abbfa7e82.png)
+![MainScreen](https://user-images.githubusercontent.com/51289334/216971825-9cc42216-336d-485e-85a1-81722968322a.png)
 
 ## Profile Screen
 ![ProfileScreen](https://user-images.githubusercontent.com/51289334/216968913-0c88782b-48d0-459a-b34b-2d24115bf13b.png)
