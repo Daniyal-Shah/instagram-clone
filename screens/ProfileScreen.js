@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Image, Text, View } from "react-native";
 import React from "react";
+import HeaderProfile from "../components/profile/HeaderProfile";
+import BodyProfile from "../components/profile/BodyProfile";
 
 const ProfileScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile Screen</Text>
+      <HeaderProfile />
+      <BodyProfile />
     </View>
   );
 };
@@ -15,11 +18,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "black",
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    color: "white",
-    fontSize: 25,
+    paddingTop: 20,
   },
 });

@@ -73,9 +73,9 @@ export default function TabNavigation() {
               }}
             >
               {focused ? (
-                <MaterialIcons name="home-filled" size={25} color={"white"} />
+                <MaterialIcons name="home-filled" size={28} color={"white"} />
               ) : (
-                <Octicons name="home" size={25} color={"white"} />
+                <Octicons name="home" size={28} color={"white"} />
               )}
             </View>
           ),
@@ -93,15 +93,15 @@ export default function TabNavigation() {
               }}
             >
               {focused ? (
-                <Ionicons name="search" color={"white"} size={25} />
+                <Ionicons name="search" color={"white"} size={28} />
               ) : (
-                <Ionicons name="search-sharp" color={"white"} size={25} />
+                <Ionicons name="search-sharp" color={"white"} size={28} />
               )}
             </View>
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Tab 3"
         component={MessagesScreen}
         options={{
@@ -113,7 +113,7 @@ export default function TabNavigation() {
               }}
             >
               {focused ? (
-                <FontistoIcons name="messenger" color={"white"} size={25} />
+                <FontistoIcons name="messenger" color={"white"} size={28} />
               ) : (
                 <Image
                   source={require("../../assets/img/messenger.png")}
@@ -123,7 +123,7 @@ export default function TabNavigation() {
             </View>
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="Tab 4"
         component={ProfileScreen}
@@ -138,11 +138,12 @@ export default function TabNavigation() {
               <Image
                 source={require("../../assets/img/user.jpg")}
                 style={{
-                  width: 25,
-                  height: 25,
+                  width: 28,
+                  height: 28,
                   borderRadius: 50,
                   borderColor: "white",
                   borderWidth: focused ? 1 : 0,
+                  resizeMode: "contain",
                 }}
               />
             </View>
