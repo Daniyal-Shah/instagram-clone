@@ -17,7 +17,8 @@ const SearchScreen = () => {
         setText={setSearch}
       />
       <ScrollView
-        vertical
+        // vertical
+
         showsVerticalScrollIndicator={false}
         style={{ paddingTop: 10 }}
       >
