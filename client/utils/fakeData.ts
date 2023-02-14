@@ -5,14 +5,20 @@ export const fakeStories = [
     name: "Shahrukh",
   },
   {
-    image: "https://static.zoomnews.com/photo/msid-94072025/94072025.jpg",
-    name: "Katrina Kaif",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMjIwMjQ5MTQ4N15BMl5BanBnXkFtZTgwOTIyMDU0OTE@._V1_.jpg",
+    name: "Kajol",
   },
   {
     image:
       "https://yt3.googleusercontent.com/ytc/AL5GRJURWNCrgCv8EMvUy9IrK0BE8BGk7kMiU7qwdSgg=s900-c-k-c0x00ffffff-no-rj",
     name: "Salman",
   },
+  {
+    image: "https://static.zoomnews.com/photo/msid-94072025/94072025.jpg",
+    name: "Katrina Kaif",
+  },
+
   {
     image:
       "https://www.bollywoodhungama.com/wp-content/uploads/2021/06/Kiara-Advani-opens-up-about-the-time-a-fan-climbed-27-floors-to-meet-her-1.jpg",
@@ -32,6 +38,11 @@ export const fakeStories = [
     image:
       "https://superstarsbio.com/wp-content/uploads/2018/07/Deepika-PAdukone.jpg",
     name: "Deepika Padukone",
+  },
+  {
+    image:
+      "https://en.samvadplus.com/wp-content/uploads/2022/09/Kareena-Kapoor-Khan.jpg",
+    name: "Kareena Kapoor",
   },
 ];
 

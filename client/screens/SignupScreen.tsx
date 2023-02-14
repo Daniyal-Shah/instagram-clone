@@ -1,9 +1,26 @@
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import AuthButton from "../components/auth/AuthButton";
 import LinkText from "../components/auth/LinkText";
+import { api } from "../api/api";
 
 const SignupScreen = ({ navigation }) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async () => {
+    try {
+      const response = await api.createUserApi({ username, email, password });
+      console.log(response);
+
+      // setUsername("");
+      // setEmail("");
+      // setPassword("");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.container}>
       <Image
@@ -11,13 +28,28 @@ const SignupScreen = ({ navigation }) => {
         style={styles.icon}
       />
       <View style={styles.textFieldContainer}>
-        <TextInput placeholder="Email" style={styles.textField} />
-        <TextInput placeholder="Username" style={styles.textField} />
-        <TextInput placeholder="Password" style={styles.textField} />
+        <TextInput
+          placeholder="Email"
+          style={styles.textField}
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
+        <TextInput
+          placeholder="Username"
+          style={styles.textField}
+          value={username}
+          onChangeText={(text) => setUsername(text)}
+        />
+        <TextInput
+          placeholder="Password"
+          style={styles.textField}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
 
         <AuthButton
           title={"Sign Up"}
-          onPress={undefined}
+          onPress={handleSubmit}
           btnStyles={styles.btnStyle}
         />
         <Text style={styles.signupLink}>
@@ -26,7 +58,7 @@ const SignupScreen = ({ navigation }) => {
             text={"Login"}
             linkStyles={undefined}
             onPress={() => {
-              navigation.navigate("SignupScreen");
+              navigation.navigate("LoginScreen");
             }}
           />
         </Text>

@@ -1,9 +1,31 @@
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import AuthButton from "../components/auth/AuthButton";
 import LinkText from "../components/auth/LinkText";
+import { api } from "../api/api";
+import { useDispatch } from "react-redux";
+import { addCurrentUser } from "../redux/user/userSlice";
 
 const LoginScreen = ({ navigation }) => {
+  const [username, setUsername] = useState("daniyal-shah");
+  const [password, setPassword] = useState("daniyal12345");
+  const dispatch = useDispatch();
+
+  const handleSubmit = async () => {
+    // if (username != "" && password != "") {
+    try {
+      // const { response }: any = await api.loginUserApi({
+      //   username,
+      //   password,
+      // });
+      // // Dispatch action
+      // dispatch(addCurrentUser(response));
+      navigation.navigate("MainScreen");
+    } catch (error) {
+      console.log(error);
+    }
+    // }
+  };
   return (
     <View style={styles.container}>
       <Image
@@ -11,8 +33,18 @@ const LoginScreen = ({ navigation }) => {
         style={styles.icon}
       />
       <View style={styles.textFieldContainer}>
-        <TextInput placeholder="Username" style={styles.textField} />
-        <TextInput placeholder="Password" style={styles.textField} />
+        <TextInput
+          placeholder="Username"
+          style={styles.textField}
+          value={username}
+          onChangeText={(text) => setUsername(text)}
+        />
+        <TextInput
+          placeholder="Password"
+          style={styles.textField}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
         <LinkText
           text={"Forgot password ?"}
           linkStyles={styles.forgotLink}
@@ -20,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
         />
         <AuthButton
           title={"Log In"}
-          onPress={undefined}
+          onPress={handleSubmit}
           btnStyles={styles.btnStyle}
         />
         <Text style={styles.signupLink}>
@@ -29,7 +61,7 @@ const LoginScreen = ({ navigation }) => {
             text={"Sign Up"}
             linkStyles={undefined}
             onPress={() => {
-              navigation.navigate("LoginScreen");
+              navigation.navigate("SignupScreen");
             }}
           />
         </Text>

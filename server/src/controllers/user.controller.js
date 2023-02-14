@@ -5,14 +5,10 @@ import globalServices from "../services/global.services.js";
 import path from "path";
 import fs from "fs";
 
-export const getUserProfile = async (userId) => {
-  const user = await UsersModel.findById(userId);
-  return user;
-};
-
 export const createUser = async (payload) => {
   const isExisting = await UsersModel.findOne({ email: payload.email });
-  if (isExisting) {
+
+  if (isExisting?._id) {
     return globalServices.throwCustomError("Email already exist!", 409, {
       email: "Email already exist try a new email",
     });
@@ -38,6 +34,11 @@ export const loginUser = async (payload) => {
     user: authUser,
     token: getJwtToken(authUser._id),
   };
+};
+
+export const getUserProfile = async (userId) => {
+  const user = await UsersModel.findById(userId);
+  return user;
 };
 
 export const updateProfile = async (userId, payload) => {
@@ -83,7 +84,7 @@ export const createPost = async (userId, payload) => {
   const __dirname = path.resolve();
   let filePath = path.join(__dirname + "/uploads/" + payload.filename);
 
-  const result = await PostsModel.create({
+  const post = await PostsModel.create({
     user: userId,
     caption: payload.caption,
     postImage: {
@@ -91,7 +92,13 @@ export const createPost = async (userId, payload) => {
       contentType: "image/png",
     },
   });
-  return result;
+
+  await UsersModel.updateOne(
+    { _id: userId },
+    { $addToSet: { posts: post._id } }
+  );
+
+  return post;
 };
 
 export const getAllPosts = async (userId) => {

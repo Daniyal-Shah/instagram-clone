@@ -33,7 +33,11 @@ const Header = ({ navigation }) => {
           />
         </TouchableOpacity> */}
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.openDrawer();
+          }}
+        >
           <View style={styles.unreadBadge}>
             <Text style={styles.unreadText}>0</Text>
           </View>

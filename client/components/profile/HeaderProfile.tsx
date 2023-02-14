@@ -35,9 +35,24 @@ const HeaderProfile = () => {
         </Text>
       </View>
       <View style={styles.buttonContainer}>
-        <CustomButton title={"Edit Profile"} />
-        <CustomButton title={"Share Profile"} />
-        <CustomButton icon={"add-user"} />
+        <CustomButton
+          title={"Edit Profile"}
+          onPress={undefined}
+          icon={undefined}
+          btnStyles={styles.button}
+        />
+        <CustomButton
+          title={"Share Profile"}
+          onPress={undefined}
+          icon={undefined}
+          btnStyles={styles.button}
+        />
+        <CustomButton
+          icon={"add-user"}
+          title={undefined}
+          onPress={undefined}
+          btnStyles={styles.button}
+        />
       </View>
     </>
   );
@@ -87,8 +102,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     paddingHorizontal: 10,
     marginVertical: 10,
+  },
+  button: {
+    marginRight: 5,
   },
 });

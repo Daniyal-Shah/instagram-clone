@@ -1,11 +1,18 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { useSelector } from "react-redux";
 import Header from "../components/home/Header";
 import Post from "../components/home/Post";
 import Stories from "../components/home/Stories";
+import { RootState } from "../redux/store";
 import { fakeStories, fakePosts } from "../utils/fakeData";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen({ navigation }) {
+  const currentUser = useSelector((state: RootState) => state.currentUser);
+  console.log("---------");
+  console.log(currentUser);
+
   return (
     <SafeAreaView style={styles.container}>
       <Header navigation={navigation} />

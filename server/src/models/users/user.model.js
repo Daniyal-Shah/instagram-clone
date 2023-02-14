@@ -20,13 +20,11 @@ const userSchema = new mongoose.Schema(
     },
     firstName: {
       type: String,
-
-      required: [true, "FirstName is required"],
+      // required: [true, "FirstName is required"],
     },
     lastName: {
       type: String,
-
-      required: [true, "LastName is required"],
+      // required: [true, "LastName is required"],
     },
     bio: {
       type: String,

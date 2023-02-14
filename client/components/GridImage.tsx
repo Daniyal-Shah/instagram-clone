@@ -3,9 +3,9 @@ import React from "react";
 
 const GridImage = ({ image, onPress, styles }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles}>
+    <View style={styles}>
       <Image source={{ uri: image }} style={thisStyles.image} />
-    </TouchableOpacity>
+    </View>
   );
 };
 

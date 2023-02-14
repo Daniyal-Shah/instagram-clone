@@ -44,7 +44,12 @@ const BodyProfile = () => {
       </View>
       <View style={styles.gridContainer}>
         {fakeStories.map((item, index) => (
-          <GridImage key={index + "-" + item.image} image={item.image} />
+          <GridImage
+            key={index + "-" + item.image}
+            image={item.image}
+            onPress={undefined}
+            styles={{ margin: 2 }}
+          />
         ))}
       </View>
     </View>
@@ -77,9 +82,14 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   gridContainer: {
+    // borderColor: "white",
+    // borderWidth: 10,
     flexDirection: "row",
     flexWrap: "wrap",
-    // justifyContent: "center",
+    justifyContent: "center",
     alignItems: "center",
+    margin: 0,
+    paddingVertical: 20,
+    // flex: 6,
   },
 });

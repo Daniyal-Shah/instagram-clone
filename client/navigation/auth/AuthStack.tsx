@@ -10,7 +10,7 @@ export default function AuthStack() {
 
   return (
     <AuthStackScreen.Navigator
-      initialRouteName="SignupScreen"
+      initialRouteName="LoginScreen"
       screenOptions={{ headerShown: false }}
     >
       <AuthStackScreen.Screen name="LoginScreen" component={LoginScreen} />
