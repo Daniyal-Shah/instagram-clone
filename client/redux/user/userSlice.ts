@@ -3,32 +3,11 @@ import {
   useSelector as rawUseSelector,
   TypedUseSelectorHook,
 } from "react-redux";
+import CurrentUserModel from "../../models/currentuser.model";
+
 import { RootState } from "../store";
 
-type User = {
-  _id: string;
-  username: string;
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  bio: string;
-  followers: Array<string>;
-  following: Array<string>;
-  posts: Array<string>;
-  createdAt: string;
-  updatedAt: string;
-  __v: string;
-};
-
-type Token = string;
-
-type currentUser = {
-  token: Token;
-  user: User;
-};
-
-const initialState: currentUser = {
+const initialState: CurrentUserModel = {
   token: "",
   user: {
     _id: "",
@@ -52,10 +31,13 @@ export const userSlice = createSlice({
   initialState,
 
   reducers: {
-    addCurrentUser(state: currentUser, action: PayloadAction<currentUser>) {
+    addCurrentUser(
+      state: CurrentUserModel,
+      action: PayloadAction<CurrentUserModel>
+    ) {
       state = action.payload;
     },
-    removeCurrentUser(state: currentUser, action) {
+    removeCurrentUser(state: CurrentUserModel, action) {
       state = undefined;
     },
   },

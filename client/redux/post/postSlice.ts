@@ -3,35 +3,20 @@ import {
   useSelector as rawUseSelector,
   TypedUseSelectorHook,
 } from "react-redux";
+import PostModel from "../../models/post.model";
 import { RootState } from "../store";
 
-type Comment = {
-  user: string;
-  comment: string;
-};
-
-type Post = {
-  _id: string;
-  user: string;
-  postImage: string;
-  caption: string;
-  comments: Comment[];
-  likes: string[];
-  createdAt: string;
-  updatedAt: string;
-};
-
-const initialState: Post[] = [];
+const initialState: PostModel[] = [];
 
 export const postSlice = createSlice({
   name: "posts",
   initialState,
 
   reducers: {
-    addPost(state: Post[], action: PayloadAction<Post>) {
+    addPost(state: PostModel[], action: PayloadAction<PostModel>) {
       state.push(action.payload);
     },
-    removePost(state: Post[], action: PayloadAction<string>) {
+    removePost(state: PostModel[], action: PayloadAction<string>) {
       state = state.filter((item) => item._id !== action.payload);
     },
   },
