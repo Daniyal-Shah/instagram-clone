@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import AntDesignIcons from "react-native-vector-icons/AntDesign";
+import { defaultStyles } from "../../utils/styles";
 const UserItem = ({ userDP, userName }) => {
   return (
     <View style={styles.container}>
@@ -42,12 +43,12 @@ const styles = StyleSheet.create({
   userName: {
     color: "white",
     fontWeight: "900",
-    fontSize: 14,
+    fontSize: defaultStyles.userNameFontSize,
   },
   status: {
     color: "gray",
     fontWeight: "600",
-    fontSize: 12,
+    fontSize: defaultStyles.followingStatusFontSize,
   },
   detailsContainer: {
     marginLeft: 20,

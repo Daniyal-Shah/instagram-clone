@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FeatherIcons from "react-native-vector-icons/Feather";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
+import { defaultStyles } from "../../utils/styles";
 
 const PostFooter = ({ caption, noViews, noComments, isLiked, isSaved }) => {
   const [showFullCaption, setShowFullCaption] = useState(false);
@@ -126,18 +127,19 @@ const styles = StyleSheet.create({
   likeText: {
     color: "white",
     fontWeight: "bold",
+    fontSize: defaultStyles.noViewsFontSize,
   },
   viewCommentsContainer: {
     paddingHorizontal: 10,
   },
   viewCommentsText: {
     color: "lightgray",
-    fontSize: 12,
+    fontSize: defaultStyles.noCommentsFontSize,
   },
   captionContainer: { padding: 10, marginBottom: 5 },
   captionText: {
     color: "white",
-    fontSize: 12,
+    fontSize: defaultStyles.captionFontSize,
   },
   moreText: {
     color: "lightgray",

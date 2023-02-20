@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AuthButton from "../components/auth/AuthButton";
 import LinkText from "../components/auth/LinkText";
 import { api } from "../api/api";
+import { constants } from "../utils/constants";
 
 const SignupScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
@@ -58,7 +59,7 @@ const SignupScreen = ({ navigation }) => {
             text={"Login"}
             linkStyles={undefined}
             onPress={() => {
-              navigation.navigate("LoginScreen");
+              navigation.navigate(constants.LoginScreenRoute);
             }}
           />
         </Text>

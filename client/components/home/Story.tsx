@@ -1,6 +1,7 @@
 import { TouchableOpacity, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import { defaultStyles } from "../../utils/styles";
 
 const Story = ({ data }) => {
   return (
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   },
   storyText: {
     color: "white",
-    fontSize: 12,
+    fontSize: defaultStyles.storyNameFontSize,
     fontWeight: "bold",
   },
 });

@@ -5,6 +5,7 @@ import LinkText from "../components/auth/LinkText";
 import { api } from "../api/api";
 import { useDispatch } from "react-redux";
 import { addCurrentUser } from "../redux/user/userSlice";
+import { constants } from "../utils/constants";
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState("daniyal-shah");
@@ -20,7 +21,7 @@ const LoginScreen = ({ navigation }) => {
       // });
       // // Dispatch action
       // dispatch(addCurrentUser(response));
-      navigation.navigate("MainScreen");
+      navigation.navigate(constants.MainScreensRoute);
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +62,7 @@ const LoginScreen = ({ navigation }) => {
             text={"Sign Up"}
             linkStyles={undefined}
             onPress={() => {
-              navigation.navigate("SignupScreen");
+              navigation.navigate(constants.SignupScreenRoute);
             }}
           />
         </Text>

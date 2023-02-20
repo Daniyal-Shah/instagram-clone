@@ -1,6 +1,7 @@
 import { StyleSheet, Text, Image, View, Button } from "react-native";
 import React from "react";
 import CustomButton from "../button/CustomButton";
+import { defaultStyles } from "../../utils/styles";
 
 const HeaderProfile = () => {
   return (
@@ -84,12 +85,12 @@ const styles = StyleSheet.create({
   nameText: {
     color: "white",
     fontWeight: "500",
-    fontSize: 16,
+    fontSize: defaultStyles.profileNameFontSize,
   },
   numberText: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: defaultStyles.numbersFontSize,
   },
   bioContainer: {
     width: "50%",
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
   bioText: {
     color: "white",
     textAlign: "left",
+    fontSize: defaultStyles.bioFontSize,
   },
   buttonContainer: {
     flexDirection: "row",

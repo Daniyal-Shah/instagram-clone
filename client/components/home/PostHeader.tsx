@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { LinearGradient } from "expo-linear-gradient";
+import { defaultStyles } from "../../utils/styles";
 
 const PostHeader = ({ userDP, userName }) => {
   return (
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
   },
   storyText: {
     color: "white",
-    fontSize: 12,
+    fontSize: defaultStyles.userNameFontSize,
     fontWeight: "bold",
   },
 

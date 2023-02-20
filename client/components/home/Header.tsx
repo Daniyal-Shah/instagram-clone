@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import { defaultStyles } from "../../utils/styles";
+import { constants } from "../../utils/constants";
 
 const Header = ({ navigation }) => {
   return (
@@ -14,7 +16,7 @@ const Header = ({ navigation }) => {
       <View style={styles.iconContainer}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("AddPostScreen");
+            navigation.navigate(constants.AddPostScreenRoute);
           }}
         >
           <Image
@@ -94,5 +96,6 @@ const styles = StyleSheet.create({
   unreadText: {
     color: "white",
     fontWeight: "600",
+    fontSize: defaultStyles.messagesNumberFontSize,
   },
 });

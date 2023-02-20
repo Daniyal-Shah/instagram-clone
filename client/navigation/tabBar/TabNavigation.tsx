@@ -13,6 +13,7 @@ import HomeScreen from "../../screens/HomeScreen";
 import ProfileScreen from "../../screens/ProfileScreen";
 import MessagesScreen from "../../screens/MessagesScreen";
 import SearchScreen from "../../screens/SearchScreen";
+import { constants } from "../../utils/constants";
 
 const Tab = createBottomTabNavigator();
 
@@ -62,7 +63,7 @@ export default function TabNavigation() {
       }}
     >
       <Tab.Screen
-        name="Tab 1"
+        name={constants.HomeTab}
         component={UserStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -82,7 +83,7 @@ export default function TabNavigation() {
         }}
       />
       <Tab.Screen
-        name="Tab 2"
+        name={constants.SearchTab}
         component={SearchScreen}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -125,7 +126,7 @@ export default function TabNavigation() {
         }}
       /> */}
       <Tab.Screen
-        name="Tab 4"
+        name={constants.ProfileTab}
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused }) => (

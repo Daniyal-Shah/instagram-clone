@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DrawerNav from "./drawer/DrawerNav";
 // AuthStack
 import AuthStack from "./auth/AuthStack";
+import { constants } from "../utils/constants";
 
 const AppStack = () => {
   const MainStack = createNativeStackNavigator();
@@ -14,13 +15,19 @@ const AppStack = () => {
     <NavigationContainer>
       <MainStack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="AuthScreen"
+        initialRouteName={constants.AuthScreensRoute}
       >
         {/* Auth Screens*/}
-        <MainStack.Screen name="AuthScreen" component={AuthStack} />
+        <MainStack.Screen
+          name={constants.AuthScreensRoute}
+          component={AuthStack}
+        />
 
         {/* Main Screen*/}
-        <MainStack.Screen name="MainScreen" component={DrawerNav} />
+        <MainStack.Screen
+          name={constants.MainScreensRoute}
+          component={DrawerNav}
+        />
       </MainStack.Navigator>
     </NavigationContainer>
   );
